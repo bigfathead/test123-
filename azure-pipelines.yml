@@ -7,6 +7,12 @@ trigger:
 - main
 
 pool:
+- task: GitHubComment@0
+  inputs:
+    gitHubConnection: 'bigfathead'
+    repositoryName: 'bigfathead/test123-'
+    id: '1a2'
+    comment: 'This is a test comment $(tt)'
   vmImage: ubuntu-latest
 
 steps:
