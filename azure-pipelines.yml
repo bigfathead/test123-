@@ -15,9 +15,7 @@ pool:
     comment: 'This is a test comment $(tt)'
   vmImage: ubuntu-latest
 
-pr:
-- master
-- releases/*
+
 
 steps:
 - script: echo Hello, world! $(tt)
