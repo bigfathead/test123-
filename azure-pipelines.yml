@@ -27,7 +27,7 @@ steps:
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
     whoami
-    sudo -s
+    sudo whoami
   displayName: 'Run a multi-line script'
  
 
@@ -49,7 +49,8 @@ steps:
       echo /opt dir
       ls -al /opt
       cat /etc/*release
-      sudo -s 
+      sudo su -
+      whoami
       echo '{"data-root":"/home/vsts/work/1/s/dockerstorage"}' > /etc/docker/daemon.json
       cat /etc/docker/daemon.json
   displayName: 'run some stuff' 
