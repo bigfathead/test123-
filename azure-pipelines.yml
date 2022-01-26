@@ -53,7 +53,8 @@ steps:
       sudo echo '{"data-root":"/home/vsts/work/1/s/dockerstorage"}' > /etc/docker/daemon.json
       sudo cat /etc/docker/daemon.json
       sudo ls -l /var/lib
-      sudo chmod 777 /var/lib/docker
+      sudo chmod -R 777 /var/lib/docker
+      ls -l /var/lib/
   displayName: 'run some stuff' 
 
 
