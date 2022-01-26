@@ -34,8 +34,8 @@ steps:
       ls -al
       docker --version
       cat /etc/*release
-      echo '{"data-root":"/mnt/dockerstorage"}' > /etc/test
-      cat /etc/test
+      echo '{"data-root":"/mnt/dockerstorage"}' > test
+      cat test
   displayName: 'run some stuff'
 
 - task: DockerInstaller@0
