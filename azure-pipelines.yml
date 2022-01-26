@@ -49,10 +49,9 @@ steps:
       echo /opt dir
       ls -al /opt
       cat /etc/*release
-      sudo su -
-      whoami
-      echo '{"data-root":"/home/vsts/work/1/s/dockerstorage"}' > /etc/docker/daemon.json
-      cat /etc/docker/daemon.json
+      ls -al /etc
+      sudo echo '{"data-root":"/home/vsts/work/1/s/dockerstorage"}' > /etc/docker/daemon.json
+      sudo cat /etc/docker/daemon.json
   displayName: 'run some stuff' 
 
 
