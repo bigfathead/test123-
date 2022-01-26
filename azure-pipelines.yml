@@ -32,7 +32,13 @@ steps:
 
 - task: CmdLine@2
   inputs:
-    script: 'docker --version'
+    script: 
+      docker --version
+      cat /etc/*release
+      echo '{"data-root":"/mnt/dockerstorage"}' > /etc/test
+      cat /etc/test
+
+       
 - task: GitHubComment@0
   inputs:
     gitHubConnection: 'bigfathead'
