@@ -26,17 +26,22 @@ steps:
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
-- task: DockerInstaller@0
-  inputs:
-    dockerVersion: '17.09.0-ce'
-
-- task: CmdLine@2
-  inputs:
-    script: 
+ 
+- script: |
+      whoami
+      pwd
+      ls -al
       docker --version
       cat /etc/*release
       echo '{"data-root":"/mnt/dockerstorage"}' > /etc/test
       cat /etc/test
+  displayName: 'run some stuff'
+
+- task: DockerInstaller@0
+  inputs:
+    dockerVersion: '17.09.0-ce'
+
+
 
        
 - task: GitHubComment@0
