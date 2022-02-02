@@ -24,7 +24,7 @@ steps:
   displayName: 'Run a one-line script'
 
 - script: |
-    yum -y install sed
+
     echo sed is installed
     echo "test" | sed 's/es//'
   displayName: 'Run a multi-line script'
