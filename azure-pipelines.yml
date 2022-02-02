@@ -24,7 +24,8 @@ steps:
   displayName: 'Run a one-line script'
 
 - script: |
-
+    ls -l
+    tt=$(cat junk|grep [0-9]* -o)
     echo sed is installed
     echo "test" | sed 's/es//'
   displayName: 'Run a multi-line script'
