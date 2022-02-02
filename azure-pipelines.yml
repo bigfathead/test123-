@@ -20,52 +20,11 @@ pool:
 
 
 steps:
-- script: echo Hello, world! $(tt)
+- script: tr
   displayName: 'Run a one-line script'
 
 - script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-    whoami
-    sudo whoami
+    echo "test" | sed 's/es//'
   displayName: 'Run a multi-line script'
  
 
-
-- task: DockerInstaller@0
-  inputs:
-    dockerVersion: '17.09.0-ce'
-
-- script: |
-      whoami
-      pwd
-      echo $HOME
-      echo environment settings
-      env
-      mkdir dockerfiles
-      ls -al
-      docker --version
-      df -h
-      echo /opt dir
-      ls -al /opt
-      cat /etc/*release
-      ls -al /etc
-      sudo ls -l /var/lib
-      sudo chmod -R 777 /var/lib/docker
-      ls -l /var/lib/
-  displayName: 'run some stuff' 
-
-
-- task: Cache@2
-  inputs:
-    key: 'docker | $(Agent.OS) | test'
-    path: '/var/lib/docker'
-       
-- task: GitHubComment@0
-  inputs:
-    gitHubConnection: 'bigfathead'
-    repositoryName: 'bigfathead/test123-'
-    comment: |
-      This is a test 2
-      
-      $(tt)
