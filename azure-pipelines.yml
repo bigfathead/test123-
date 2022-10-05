@@ -9,18 +9,12 @@ trigger:
 - main
 
 pool:
-
-  inputs:
-    gitHubConnection: 'bigfathead'
-    repositoryName: 'bigfathead/test123-'
-    id: '1a2'
-    comment: 'This is a test comment $(tt)'
-  vmImage: ubuntu-latest
+  name: PWS-Tremo
 
 
 
 steps:
-- script: echo "test" | tr -d e
+- script: echo `hostname`
   displayName: 'Run a one-line script'
 
 - script: |
